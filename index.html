@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pohela Boishakh Invitation</title>
+<title>শুভ নববর্ষ ১৪৩৩ — আমন্ত্রণপত্র</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -31,7 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Tiro Bangla', Georgia, serif;
     padding: 2rem 1rem;
     overflow-x: hidden;
   }
@@ -46,45 +47,46 @@
   }
 
   .motif {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.8rem;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 1.6rem;
     display: block;
   }
 
   .landing h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1.9rem, 6vw, 2.6rem);
-    font-weight: 500;
+    font-family: 'Tiro Bangla', Georgia, serif;
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    font-weight: 400;
     color: var(--text-dark);
-    line-height: 1.25;
-    letter-spacing: 0.02em;
-    margin-bottom: 0.6rem;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5rem;
   }
 
   .landing h1 span {
     display: block;
     font-style: italic;
     color: var(--red);
-    font-size: 1.1em;
+    font-size: 0.82em;
+    margin-top: 0.15em;
   }
 
   .landing .sub {
-    font-size: 1rem;
+    font-size: 0.88rem;
     color: var(--text-light);
-    margin-bottom: 2.5rem;
-    letter-spacing: 0.04em;
+    margin-bottom: 2.2rem;
+    letter-spacing: 0.03em;
   }
 
   .btn-open {
     display: inline-block;
-    padding: 0.85rem 2.8rem;
+    padding: 0.78rem 2.4rem;
     background: var(--red);
     color: #fff;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.15rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
+    font-family: 'Tiro Bangla', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -110,14 +112,13 @@
     width: 60px;
     height: 1px;
     background: var(--parchment);
-    margin: 2rem auto 1.2rem;
+    margin: 2rem auto 1.1rem;
   }
 
   .date-note {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-light);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   /* ── Overlay ── */
@@ -148,30 +149,32 @@
     background-image: radial-gradient(ellipse 70% 50% at 50% 0%, #fdf0e0 0%, transparent 70%);
     border: 1px solid var(--parchment);
     border-radius: 4px;
-    max-width: 540px;
+    max-width: 520px;
     width: 100%;
-    max-height: 90vh;
+    max-height: 88vh;
     overflow-y: auto;
-    padding: 2.8rem 2.5rem 2.4rem;
+    /* hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 2.4rem 2.2rem 2.2rem;
     position: relative;
     transform: translateY(28px) scale(0.97);
     opacity: 0;
     transition: transform 0.45s cubic-bezier(0.22, 0.9, 0.36, 1), opacity 0.4s ease;
-    scrollbar-width: thin;
-    scrollbar-color: var(--parchment) transparent;
   }
+
+  .modal::-webkit-scrollbar { display: none; }
 
   .overlay.show .modal {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
 
-  /* corner ornaments */
   .modal::before, .modal::after {
     content: '';
     position: absolute;
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-color: var(--ochre);
     border-style: solid;
     opacity: 0.45;
@@ -181,11 +184,11 @@
 
   .btn-close {
     position: absolute;
-    top: 14px;
-    right: 18px;
+    top: 13px;
+    right: 16px;
     background: none;
     border: none;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-light);
     cursor: pointer;
     line-height: 1;
@@ -197,66 +200,69 @@
   /* ── Invitation content ── */
   .inv-header {
     text-align: center;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.5rem;
   }
 
   .inv-motif {
-    width: 54px;
-    height: 54px;
-    margin: 0 auto 1rem;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 0.9rem;
     display: block;
   }
 
   .inv-tagline {
-    font-size: 0.78rem;
-    letter-spacing: 0.2em;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--red);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.45rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
   }
 
   .inv-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1.7rem, 5vw, 2.2rem);
-    font-weight: 600;
+    font-family: 'Tiro Bangla', Georgia, serif;
+    font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+    font-weight: 400;
     color: var(--text-dark);
-    line-height: 1.2;
-    margin-bottom: 0.3rem;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
   }
 
   .inv-subtitle {
     font-style: italic;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--text-mid);
+    font-family: 'Tiro Bangla', Georgia, serif;
   }
 
   .inv-rule {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 1.4rem 0;
+    margin: 1.2rem 0;
   }
   .inv-rule span { flex: 1; height: 1px; background: var(--parchment); }
   .inv-rule em {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--ochre);
     font-style: normal;
     opacity: 0.7;
   }
 
   .inv-body {
-    font-size: 1.02rem;
+    font-size: 0.95rem;
     color: var(--text-mid);
-    line-height: 1.9;
+    line-height: 2;
+    font-family: 'Tiro Bangla', Georgia, serif;
   }
 
-  .inv-body p { margin-bottom: 1rem; }
+  .inv-body p { margin-bottom: 0.9rem; }
   .inv-body p:last-child { margin-bottom: 0; }
 
   .stall-name {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.22rem;
-    font-weight: 600;
+    font-family: 'Tiro Bangla', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 400;
     color: var(--red);
     font-style: italic;
   }
@@ -265,40 +271,42 @@
     background: var(--red-pale);
     border-left: 3px solid var(--red);
     border-radius: 0 3px 3px 0;
-    padding: 1rem 1.2rem;
-    margin: 1.4rem 0;
-    font-size: 0.95rem;
+    padding: 0.9rem 1.1rem;
+    margin: 1.2rem 0;
+    font-size: 0.9rem;
     color: var(--text-dark);
-    line-height: 1.8;
+    line-height: 2;
+    font-family: 'Tiro Bangla', Georgia, serif;
   }
 
   .inv-details strong {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.05rem;
+    font-family: 'Tiro Bangla', Georgia, serif;
+    font-size: 0.98rem;
     color: var(--red);
-    font-weight: 600;
+    font-weight: 400;
     display: block;
     margin-bottom: 0.3rem;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
   }
 
   .inv-signoff {
-    margin-top: 1.6rem;
+    margin-top: 1.4rem;
     text-align: right;
     font-style: italic;
     color: var(--text-mid);
-    font-size: 0.97rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    font-family: 'Tiro Bangla', Georgia, serif;
   }
 
   .inv-signoff .sig-name {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.15rem;
-    font-weight: 600;
+    font-family: 'Tiro Bangla', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 400;
     font-style: normal;
     color: var(--text-dark);
     display: block;
-    margin-top: 0.3rem;
+    margin-top: 0.25rem;
   }
 
   /* ── Animations ── */
@@ -309,8 +317,10 @@
 
   /* ── Mobile tweaks ── */
   @media (max-width: 480px) {
-    .modal { padding: 2.2rem 1.6rem 2rem; }
+    .modal { padding: 2rem 1.4rem 1.8rem; }
     .btn-close { top: 10px; right: 12px; }
+    .inv-body { font-size: 0.9rem; }
+    .inv-details { font-size: 0.86rem; }
   }
 </style>
 </head>
@@ -319,11 +329,9 @@
 <!-- ══ Landing screen ══ -->
 <div class="landing">
 
-  <!-- Alpona / floral SVG motif -->
   <svg class="motif" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <circle cx="40" cy="40" r="38" stroke="#c0392b" stroke-width="1" stroke-dasharray="4 3" opacity="0.35"/>
     <circle cx="40" cy="40" r="28" stroke="#b8860b" stroke-width="0.8" opacity="0.3"/>
-    <!-- petals -->
     <ellipse cx="40" cy="18" rx="5" ry="11" fill="#c0392b" opacity="0.22"/>
     <ellipse cx="40" cy="62" rx="5" ry="11" fill="#c0392b" opacity="0.22"/>
     <ellipse cx="18" cy="40" rx="11" ry="5" fill="#c0392b" opacity="0.22"/>
@@ -332,18 +340,17 @@
     <ellipse cx="57" cy="57" rx="5" ry="11" fill="#b8860b" opacity="0.18" transform="rotate(-45 57 57)"/>
     <ellipse cx="57" cy="23" rx="5" ry="11" fill="#b8860b" opacity="0.18" transform="rotate(45 57 23)"/>
     <ellipse cx="23" cy="57" rx="5" ry="11" fill="#b8860b" opacity="0.18" transform="rotate(45 23 57)"/>
-    <!-- centre -->
     <circle cx="40" cy="40" r="9" fill="#fdf6ee" stroke="#c0392b" stroke-width="1" opacity="0.8"/>
     <circle cx="40" cy="40" r="4.5" fill="#c0392b" opacity="0.55"/>
   </svg>
 
   <h1>শুভ নববর্ষ<span>পহেলা বৈশাখ</span></h1>
-  <p class="sub">১৪ এপ্রিল &nbsp;·&nbsp; ১৪৩২ বঙ্গাব্দ</p>
+  <p class="sub">১৪ এপ্রিল &nbsp;·&nbsp; ১৪৩৩ বঙ্গাব্দ</p>
 
-  <button class="btn-open" onclick="openModal()">Open Invitation</button>
+  <button class="btn-open" onclick="openModal()">আমন্ত্রণপত্র খুলুন</button>
 
   <div class="divider-line"></div>
-  <p class="date-note">কিশোরগঞ্জ বিশ্ববিদ্যালয়</p>
+  <p class="date-note">কিশোরগঞ্জ বিশ্ববিদ্যালয়</p>
 </div>
 
 
@@ -351,10 +358,9 @@
 <div class="overlay" id="overlay" onclick="closeOnBackdrop(event)">
   <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="inv-title">
 
-    <button class="btn-close" onclick="closeModal()" aria-label="Close">&#x2715;</button>
+    <button class="btn-close" onclick="closeModal()" aria-label="বন্ধ করুন">&#x2715;</button>
 
     <div class="inv-header">
-      <!-- smaller motif inside modal -->
       <svg class="inv-motif" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="40" cy="40" r="38" stroke="#c0392b" stroke-width="1" stroke-dasharray="4 3" opacity="0.35"/>
         <ellipse cx="40" cy="18" rx="5" ry="11" fill="#c0392b" opacity="0.22"/>
@@ -369,96 +375,55 @@
         <circle cx="40" cy="40" r="4.5" fill="#c0392b" opacity="0.55"/>
       </svg>
 
-      <p class="inv-tagline">A Warm Invitation</p>
-      <h2 class="inv-title" id="inv-title">Pohela Boishakh 1432</h2>
-      <p class="inv-subtitle">Bengali New Year Celebration</p>
+      <p class="inv-tagline">সাদর আমন্ত্রণ</p>
+      <h2 class="inv-title" id="inv-title">পহেলা বৈশাখ ১৪৩৩</h2>
+      <p class="inv-subtitle">বাংলা নববর্ষ উদযাপন</p>
     </div>
 
     <div class="inv-rule"><span></span><em>&#10022;</em><span></span></div>
 
     <div class="inv-body">
-      <p>Respected Sir / Madam,</p>
+      <p>সম্মানিত সুধী,</p>
 
-      <p>
-        With immense joy and warmth, we invite you to grace our stall —
-        <span class="stall-name">[Computer & Programming Club]</span> —
-        on the auspicious occasion of <strong>Pohela Boishakh</strong>, the
-        first day of the Bengali New Year.
-      </p>
+      <p>বাংলা নববর্ষ ১৪৩৩-এর এই শুভলগ্নে আপনাদের সবাইকে জানাই 'শুভ নববর্ষ'।</p>
 
-      <p>
-        As colours fill the air and the spirit of renewal touches every heart,
-        we would be truly honoured to have your cherished presence with us —
-        to share the festive flavours, traditional crafts, and the joy of
-        welcoming a brand new year together.
-      </p>
+      <p>পুরনো বছরের সব গ্লানি মুছে ফেলে নতুন বছরকে বরণ করে নেওয়ার এই আনন্দঘন আয়োজনে আমাদের স্টল — <span class="stall-name">Computer &amp; Programming Club</span> — এ আপনাদের সাদর আমন্ত্রণ জানাচ্ছি।</p>
 
-      <p>
-        Your visit will be a source of great inspiration and encouragement
-        for all of us.
-      </p>
+      <p>বৈশাখের এই উৎসবমুখর পরিবেশে আপনাদের স্বতঃস্ফূর্ত উপস্থিতি আমাদের আয়োজনকে আরও প্রাণবন্ত ও সার্থক করে তুলবে। আসুন, সবাই মিলে উৎসবের রঙে রাঙিয়ে তুলি নতুন বছরের প্রথম দিনটি।</p>
     </div>
 
     <div class="inv-details">
-      <strong>Event Details</strong>
-      &#128197;&nbsp; Tuesday, 14 April 2025<br>
-      &#128337;&nbsp; Morning onwards<br>
-      &#128205;&nbsp; Collage Campus, Kishoreganj University<br>
-      &#127881;&nbsp; Stall: <span class="stall-name">[ CPC ]</span>
+      <strong>অনুষ্ঠানের বিবরণ</strong>
+      📅&nbsp; মঙ্গলবার, ১৪ এপ্রিল ২০২৬<br>
+      &#128337;&nbsp; সকাল ৯ঃ০০ টা থেকে<br>
+      📍&nbsp; কলেজ ক্যাম্পাস, কিশোরগঞ্জ বিশ্ববিদ্যালয়<br>
+      🎪&nbsp; স্টল: <span class="stall-name">CPC</span>
     </div>
-    <button class="btn" onclick="showMessage()">আমি উপস্থিত থাকবো</button>
 
     <div class="inv-body">
-      <p>
-        We look forward to your presence and hope this new year brings you
-        abundant happiness, good health, and prosperity.
-      </p>
+      <p>নতুন বছর আপনার জীবনে বয়ে আনুক অনাবিল সুখ, শান্তি ও সমৃদ্ধি।</p>
     </div>
 
     <div class="inv-rule"><span></span><em>&#10022;</em><span></span></div>
 
     <div class="inv-signoff">
-      With respect and warm regards,<br>
-      <!-- <span class="sig-name">Students of  Kishoreganj University</span> -->
-      CPC Pohela Boishakh Celebration Committee
+      শুভেচ্ছান্তে,<br>
+      <span class="sig-name">সিপিসি (CPC)</span>
+      পহেলা বৈশাখ উদযাপন কমিটি
     </div>
 
   </div>
 </div>
-<div class="overlay" id="overlay" onclick="hideMessage()">
-  <div class="message">
-    <h2>ধন্যবাদ 🌸</h2>
-    <p>
-      আপনার উপস্থিতি আমাদের জন্য অনেক আনন্দের হবে।<br>
-      শুভ নববর্ষ ১৪৩৩।
-    </p>
-  </div>
-</div>
+
 
 <script>
   function openModal() {
-    var overlay = document.getElementById('overlay');
-    overlay.classList.add('show');
+    document.getElementById('overlay').classList.add('show');
     document.body.style.overflow = 'hidden';
   }
-  function openCard(){
-  document.getElementById('card').classList.add('open');
-  setTimeout(()=>{
-    document.querySelector('.card-wrapper').style.display='none';
-    document.getElementById('main').classList.add('active');
-  },1200);
-}
-
-function showMessage(){
-  document.getElementById('overlay').classList.add('active');
-}
-  function hideMessage(){
-  document.getElementById('overlay').classList.remove('active');
-}
 
   function closeModal() {
-    var overlay = document.getElementById('overlay');
-    overlay.classList.remove('show');
+    document.getElementById('overlay').classList.remove('show');
     document.body.style.overflow = '';
   }
 
